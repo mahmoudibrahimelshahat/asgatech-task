@@ -7,11 +7,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule, CommonModule, MatSidenavModule,MatInputModule,MatSelectModule,MatFormFieldModule],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule, CommonModule,
+     MatSidenavModule,MatInputModule,MatSelectModule,MatFormFieldModule, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })

@@ -1,0 +1,44 @@
+<div class="flex justify-between items-center my-3">
+    <h1>Users</h1>
+   <div>
+    <button (click)="onNavigateBack()" >
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+   </div>
+</div>
+<div class="mat-elevation-z8 mat-table-responsive overflow-x-scroll lg:overflow-auto my-4">
+    <table mat-table [dataSource]="users()" class="mat-elevation-z8">
+        <ng-container matColumnDef="#">
+            <th class="lg:w-64" mat-header-cell *matHeaderCellDef> # </th>
+            <td mat-cell *matCellDef="let element; let i = index;"> {{ i+1 }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Name">
+            <th class="lg:w-64" mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Email">
+            <th class="lg:w-64" mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Phone">
+            <th class="lg:w-64" mat-header-cell *matHeaderCellDef> Phone </th>
+            <td mat-cell *matCellDef="let element"> {{element.Phone}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Address">
+            <th class="lg:w-64" mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element" matTooltip="{{element.Address}}"> {{element.Address  | truncate:10}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="RegisterDate">
+            <th class="lg:w-64" mat-header-cell *matHeaderCellDef> RegisterDate </th>
+            <td mat-cell *matCellDef="let element"> {{element.RegisterDate | date}} </td>
+        </ng-container>
+
+        <tr class="bg-[#ECEEF2]" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="bg-[#ECEEF2]" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
