@@ -24,7 +24,8 @@ export class ProductsService {
           return element;
         });
         console.log(updatedProducts); //here data updated successfully 
-        // (Note -> you can use Json Server to update file) without it you won't able to update file
+        // (Note -> you can use Json Server to update file) without it you won't able to update file 
+        // or make Json file as ts file and make it export)
         return updatedProducts;
       })
     );
